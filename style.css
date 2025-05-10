@@ -1,0 +1,247 @@
+        :root {
+            --bg-color: #2e3436;
+            --text-color: #d3d7cf;
+            --prompt-color: #8ae234;
+            --host-color: #729fcf;
+            --dir-color: #ad7fa8;
+            --logo-color: #fcaf3e;
+            --system-color: #729fcf;
+            --output-color: #8ae234;
+            --border-color: #555753;
+        }
+
+        .theme-light {
+            --bg-color: #f5f5f5;
+            --text-color: #333333;
+            --prompt-color: #4e9a06;
+            --host-color: #204a87;
+            --dir-color: #75507b;
+            --logo-color: #ce5c00;
+            --system-color: #3465a4;
+            --output-color: #4e9a06;
+            --border-color: #d3d7cf;
+        }
+
+        .theme-blue {
+            --bg-color: #1a2b3c;
+            --text-color: #e0e0e0;
+            --prompt-color: #5af78e;
+            --host-color: #57c7ff;
+            --dir-color: #ff6ac1;
+            --logo-color: #f3f99d;
+            --system-color: #57c7ff;
+            --output-color: #5af78e;
+            --border-color: #3b4b5b;
+        }
+
+        .theme-hacker {
+            --bg-color: #0d0d0d;
+            --text-color: #00ff00;
+            --prompt-color: #00ff00;
+            --host-color: #00ff00;
+            --dir-color: #00ff00;
+            --logo-color: #00ff00;
+            --system-color: #00ff00;
+            --output-color: #00ff00;
+            --border-color: #00ff00;
+        }
+
+        .theme-pink {
+            --bg-color: #2d1b2e;
+            --text-color: #e8bbd0;
+            --prompt-color: #ff79c6;
+            --host-color: #bd93f9;
+            --dir-color: #50fa7b;
+            --logo-color: #f1fa8c;
+            --system-color: #8be9fd;
+            --output-color: #ff79c6;
+            --border-color: #6272a4;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Courier New', monospace;
+            padding: 20px;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .terminal {
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .prompt {
+            color: var(--prompt-color);
+            font-weight: bold;
+        }
+
+        .host {
+            color: var(--host-color);
+        }
+
+        .directory {
+            color: var(--dir-color);
+        }
+
+        .input-line {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .search-input {
+            background-color: transparent;
+            border: none;
+            color: var(--text-color);
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            flex-grow: 1;
+            outline: none;
+        }
+
+        .search-results {
+            margin-top: 20px;
+            border-top: 1px dashed var(--border-color);
+            padding-top: 10px;
+        }
+
+        .result {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px dotted var(--border-color);
+        }
+
+        .result-title {
+            color: var(--prompt-color);
+            font-weight: bold;
+        }
+
+        .result-url {
+            color: var(--host-color);
+            font-size: 14px;
+        }
+
+        .result-description {
+            margin-top: 5px;
+        }
+
+        .logo {
+            text-align: center;
+            color: var(--logo-color);
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .logo pre {
+            direction: ltr;
+            text-align: center;
+            white-space: pre;
+            font-family: monospace;
+            display: block;
+        }
+
+        .blink {
+            animation: blink-animation 1s steps(5, start) infinite;
+        }
+
+        @keyframes blink-animation {
+            to {
+                visibility: hidden;
+            }
+        }
+
+        .history-item {
+            margin-bottom: 5px;
+        }
+
+        .system-message {
+            color: var(--system-color);
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .command-output {
+            color: var(--output-color);
+            margin-left: 15px;
+            margin-bottom: 10px;
+        }
+
+        .help-table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        .help-table td {
+            padding: 5px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .help-table .command {
+            color: var(--prompt-color);
+            font-weight: bold;
+            width: 30%;
+        }
+
+        .help-table .description {
+            color: var(--text-color);
+        }
+
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: var(--bg-color);
+            border: 2px solid var(--prompt-color);
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            max-width: 80%;
+            text-align: center;
+        }
+
+        .popup-title {
+            color: var(--logo-color);
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .popup-content {
+            margin-bottom: 20px;
+        }
+
+        .popup-button {
+            background-color: var(--prompt-color);
+            color: var(--bg-color);
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-color);
+            font-size: 10px;
+            margin-top: -10px;
+        }
